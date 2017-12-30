@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>小翻译</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>小翻译</h1>
+    <form action="/" method="post">
+        <input type="text" name="word">
+        <input type="submit" value="Translate">
+    </form>
+    <% if(arr.length>=1){%>
+    <p>查询词：<%= arr[0]%></p>
+    <p>基本含义：
+        <% for(let i=0;i<arr[1].length;i++){ %>
+         <%= arr[1][i] %>
+        <% } %>
+    </p>
+    <p>相关词：</p>
+    <% for(let i=0;i<arr[2].length;i++){%>
+    <p><%= arr[2][i].key %>     <%= arr[2][i].value %></p>
+  <%}%><%}%>
+  </body>
+</html>
